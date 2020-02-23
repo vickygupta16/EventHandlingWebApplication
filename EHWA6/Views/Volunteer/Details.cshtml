@@ -1,0 +1,29 @@
+﻿@model EHWA6.Models.Volunteer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Volunteer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.evs.EventName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.evs.EventName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ups.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ups.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.VolunteerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

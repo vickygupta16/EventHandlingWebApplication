@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title   </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/ehalogocropped.png" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            .mysec {
+                font-size:18px;
+
+            }
+            .nav-item {
+                padding:10px;
+            }
+             .mysec a:hover{
+                    text-decoration:none;
+                    background-color:yellow;
+                    padding:5px
+                }
+        </style>
+        </head>
+    <body align="center">
+        <header style="background-color:black;padding:10px">
+                <div style="text-align:center">
+                    <section class="mysec">
+                        <ul class="nav justify-content-center">
+                          <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("About", "About", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("Add Organization","Create","Organization")
+                          </li>
+                          <li class="nav-item">
+                              @Html.ActionLink("Add Events","Create","Events")
+                          </li>  
+                          <li class="nav-item">
+                              @Html.ActionLink("Data","Data","Home")
+                          </li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <li class="nav-item" style="float:right">
+                              @{Html.RenderPartial("_LoginPartial");}
+                          </li>
+                        </ul>
+                    </section>
+                </div>
+        </header>
+
+        <div class="container" style="margin-top:40px" align="center">
+            <div class="card" style="background-color:antiquewhite;width:1000px">
+              <div class="card-body">
+                <h2 style="text-align:center">About</h2>
+                <h4 style="text-align:center">Event Handling WebSite Application</h4>
+                  <br />
+                    <h1>Welcome back Administrator.</h1>
+                  <p style="text-align:center"><i class="far fa-laugh-wink fa-5x"></i></p>
+                  <p style="float:right;color:forestgreen;font-weight:bold">Thanks for visiting!<br />Have a Nice Day!</p>
+              </div>
+            </div>
+        </div>
+        
+
+         </body>
+    </html>

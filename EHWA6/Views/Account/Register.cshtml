@@ -1,0 +1,119 @@
+﻿@model EHWA6.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title   </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/ehalogocropped.png" />
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            .mysec {
+                font-size:18px;
+
+            }
+            .nav-item {
+                padding:10px;
+            }
+             .mysec a:hover{
+                    text-decoration:none;
+                    background-color:yellow;
+                    padding:10px
+                }
+        </style>
+        </head>
+    <body align="center">
+        <header style="background-color:black;padding:10px">
+                <div style="text-align:center">
+                    <section class="mysec">
+                        <ul class="nav justify-content-center">
+                          <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("About", "About", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                          </li>
+                            <li class="nav-item">
+                              @Html.ActionLink("Participate", "Index", "Volunteer");
+                          </li> 
+                          <li class="nav-item">
+                              @Html.ActionLink("Data","Data","Home")
+                          </li>
+                          <li class="nav-item" style="float:right">
+                              @{Html.RenderPartial("_LoginPartial");}
+                          </li>
+                        </ul>
+                    </section>
+                </div>
+       
+        </header>
+        <div class="card" style="width:700px;height:auto;margin:auto;margin-top:20px;
+        background-color:lightgrey;margin-bottom:20px;text-align:center" align="center">
+          <div class="card-body">
+            @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+                    <h4>Registration Form</h4>
+    <table cellpadding="5px" align="center">
+        <tr>
+            <td>@Html.LabelFor(m => m.UserName)</td>
+              <td>@Html.LabelFor(m => m.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m => m.UserName)</td>
+            <td>@Html.TextBoxFor(m => m.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.PasswordFor(m => m.Password)</td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.FirstName)</td>
+            <td>@Html.LabelFor(m => m.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            <td>@Html.TextBoxFor(m => m.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Gender)</td>
+            <td>@Html.LabelFor(m => m.Mobile)</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="Gender"  value="Male"/>Male
+                <input type="radio" name="Gender"  value="Female"/>Female
+            </td>
+            <td>@Html.TextBoxFor(m => m.Mobile)</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.LabelFor(m => m.Age)</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.TextBoxFor(m => m.Age)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Register" /></td>
+        </tr>
+    </table>
+        
+}
+          </div>
+        </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        </body>
+</html>
+
